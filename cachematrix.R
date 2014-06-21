@@ -17,12 +17,12 @@ makeCacheMatrix <- function(S = 58462, D = 10, I = T) {
         
         # This is just to generate the matrix to be inverted:
         set.seed(S)
-        Matrix <- matrix(rnorm(D^2), nrow=D, ncol=D, byrow = TRUE) 
+        Matrix <<- matrix(rnorm(D^2), nrow=D, ncol=D, byrow = TRUE) 
         
         # Here we perform the inversion (if required) and cache the reusult
         if(I == T){
-        X <- solve(Matrix) 
-        Inv <<- X
+                X <- solve(Matrix) 
+                Inv <<- X
         }
         
 }
@@ -43,8 +43,9 @@ cacheSolve <- function(x = Matrix, ...) {
         # In case we decided not calculate the inversion earlier 
         # we need to calculate it now:
         else {
+                message("computing inverse matrix")
                 results <- solve(x)
                 return(results)
         }
-
+        
 }
