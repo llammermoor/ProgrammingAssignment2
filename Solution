@@ -28,7 +28,7 @@ makeCacheMatrix <- function(S = 58462, D = 10, I = T) {
 # Function II: 
 cacheSolve <- function(x = Matrix, ...) {
         
-        # If we have performed the inversion already, 
+        # If we have performed the inversion already,  
         # we just get the cached results
         if(choice == T){
                 message("getting cached data") 
